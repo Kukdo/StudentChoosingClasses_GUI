@@ -1,5 +1,5 @@
 # 计182 2018310781 姜志鹏
-## 实验名称：学生选课系统设计
+## 综合实验名称：学生选课系统设计
 ---
 ### 实验目的
 #### 分析学生选课系统
@@ -33,10 +33,13 @@
 ~~~ 
 public static void main(String[] args) 
 ~~~
-##### 示例图：
-![image1](https://github.com/Kukdo/Seven-words-poem/blob/master/images/1.PNG)
+##### Login mode 示例图：
+![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Login.PNG)
 #### 分支1 老师登陆成功
-#### 1-1. 进入Create mode，在对应的文本框填入对应信息之后点击Create Lessons即可创建成功，之后退出系统
+##### Admin Login 示例图
+###### 注：默认设定的账号和密码都2018310781
+![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Admin_Login.PNG)
+#### 1-1 进入Create mode，在对应的文本框填入对应信息之后点击Create Lessons即可创建成功，之后退出系统
 ##### 注：一次只能创建一门课，如果还需再创建请重新登陆系统的管理员账号
 #### 核心代码如下：
 ~~~
@@ -54,10 +57,16 @@ public static void main(String[] args)
 		}	
 	}
 ~~~
-##### 输出示例图：
-![image2](https://github.com/Kukdo/Seven-words-poem/blob/master/images/2.PNG)
+##### Create mode 示例图：
+![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Create.PNG)
+##### 创建课程成功进行选课操作 示例图：
+![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Chose_after_create.PNG)
 #### 分支2 学生登陆成功
+##### Student Login 示例图：
+![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Student_Login.PNG)
 #### 2-1. 进入Index mode，可选择三个mode，Chose，Exit以及Print；
+##### Index mode 示例图：
+![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Index.PNG)
 ##### 注：若无选择课程，则无法打印课程以及退课，因此应该优先进行选课操作
 ##### 2-分支1 进入Chose mode
 ##### 通过鼠标点击选择课程，然后点击Select即可选课成功
@@ -88,6 +97,10 @@ public static void main(String[] args)
 		return count;
 	}
 ~~~
+##### Chose mode 示例图：
+![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Chose.PNG)
+##### 选课成功示例图：
+![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Chose_Successfully.PNG)
 ##### 2-分支2 进入Exit mode
 ##### 通过鼠标点击选择要退的课程，然后点击Quit即可选课成功
 ~~~
@@ -117,6 +130,12 @@ public static void main(String[] args)
 		return count;
 	}
 ~~~
+##### Exit mode 示例图：
+![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Exit.PNG)
+##### 选中退出课程示例图：
+![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Exit_Chosen.PNG)
+##### 退课成功示例图：
+![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Exit_Successfully.PNG)
 ##### 2-分支3 进入Print mode
 ##### 系统自动展示所有已经选择课程，点击OK或者右上角的叉都可退出Print mode以及选课系统
 ~~~
@@ -146,13 +165,8 @@ public static void main(String[] args)
 		return count;
 	}
 ~~~
-##### 例1：查找“三”出现的次数
-![image3](https://github.com/Kukdo/Seven-words-poem/blob/master/images/3.PNG)
-##### 例2：查找“三千”出现的次数
-![image4](https://github.com/Kukdo/Seven-words-poem/blob/master/images/4.PNG)
-##### 例3：查找“从此”出现的次数
-![image5](https://github.com/Kukdo/Seven-words-poem/blob/master/images/5.PNG)
-
+##### Print mode 示例图：
+![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Print.PNG)
 ---
 ### 实验感想
 #### 本次实验主要是针对GUI以及IO的实验，通过本次实验我掌握了GUI的设定（运用WindowsBuilder插件可大大提高设置效率），能够灵活的运用IO操作进行文件读取和输出操作，以及字符串的匹配，索引查询有了进一步的了解。除此之外，对于异常的处理也更加的熟练了。相信通过本次实验，对于今后的数据处理操作会有很大的益处。本次实验较为复杂，但是在理清基本思路之后便能大概构思出实现对应功能所需要的方法和函数。
