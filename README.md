@@ -33,14 +33,14 @@
 #### 执行Login程序，如果是学生则选中Student，若是老师则选中Teacher，学生如果已经Create账号直接Login即可，未注册的学生需要先进行Create；老师通过管理员给的账号密码登陆，不可自己创建具有管理权限的账号；
 ##### 核心代码（登陆部分）如下：
 ~~~ 
-					        			 //登陆成功触发事件
-					        			if(Number.getText().trim().equals(verify[j])&&
-					        					new String(Passwords.getPassword()).trim().equals(verify[j+1])){					 				        	
-										JOptionPane.showMessageDialog(null, "Login Successfully");
-										setVisible(false);
-							            Index index = new Index();
-							            index.setVisible(true);	
-					        			}
+//登陆成功触发事件
+if(Number.getText().trim().equals(verify[j])&&
+new String(Passwords.getPassword()).trim().equals(verify[j+1])){
+JOptionPane.showMessageDialog(null, "Login Successfully");
+setVisible(false);
+Index index = new Index();
+index.setVisible(true);	
+}
 ~~~
 ##### Login mode 示例图：
 ![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Login.PNG)
