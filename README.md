@@ -28,15 +28,17 @@
 #### Build id: 20190614-1200
 ---
 ### 操作步骤及核心代码：
-#### 1.执行Login程序，如果是学生则选上Student，若是老师则选上Teacher，学生如果已经Create账号直接Login即可，未注册的学生需要先进行Create；老师通过管理员给的账号密码登陆，不可自己创建具有管理权限的账号；
-##### 打开Eclipse，在顶部工具栏中选择Run，再选择Run Configuration，最后在Arugements中添加字符串（数组），之后在运行的时候编译器就会把字符串的内容传递给args，然后即可调用，传参位置如下：
+#### 1.Login mode 执行Login程序，如果是学生则选上Student，若是老师则选上Teacher，学生如果已经Create账号直接Login即可，未注册的学生需要先进行Create；老师通过管理员给的账号密码登陆，不可自己创建具有管理权限的账号；
+##### 核心代码如下：
 ~~~ 
 public static void main(String[] args) 
 ~~~
 ##### 示例图：
 ![image1](https://github.com/Kukdo/Seven-words-poem/blob/master/images/1.PNG)
-#### 2.利用循环将诗歌进行切片操作，并且添加标点符号
-##### 主要利用循环操作，每七个字切片一次，然后加上逗号或者句号，实现代码如下：
+#### 分支1 老师登陆成功
+#### 1-1. 进入Create mode，在对应的文本框填入对应信息之后点击Create Lessons即可创建成功，之后退出系统
+##### 注：一次只能创建一门课，如果还需再创建请重新登陆系统的管理员账号
+#### 核心代码如下：
 ~~~
 //split model
 	public static void printsplit(String strsplit) {
@@ -54,8 +56,69 @@ public static void main(String[] args)
 ~~~
 ##### 输出示例图：
 ![image2](https://github.com/Kukdo/Seven-words-poem/blob/master/images/2.PNG)
-#### 3.根据用户输入的词统计词频
-##### 输入通过BufferedReader的函数，而统计主要利用String的IndexOf和substring的方法，进而达到统计词出现的次数的功能，实现代码如下：
+#### 分支2 学生登陆成功
+#### 2-1. 进入Index mode，可选择三个mode，Chose，Exit以及Print；
+##### 注：若无选择课程，则无法打印课程以及退课，因此应该优先进行选课操作
+##### 2-分支1 进入Chose mode
+##### 通过鼠标点击选择课程，然后点击Select即可选课成功
+~~~
+    	// input and Exception model
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));   
+        String str = null;
+        while(true){
+            try {
+                System.out.println("Please type the word or words you want to count: " );
+                str = br.readLine();
+            }catch(IOException e){
+                e.printStackTrace();
+                System.out.println("IO's type error!");
+            }
+            //System.out.print(str+"\n");
+            break;
+        }
+        
+	//count model
+	public static int count(String srcStr, String findStr) {
+		int count = 0;
+		int index = 0;
+		while ((index = srcStr.indexOf(findStr, index)) != -1) {// if key exists in str
+			index = index + findStr.length();
+			count++; // +1
+		}
+		return count;
+	}
+~~~
+##### 2-分支2 进入Exit mode
+##### 通过鼠标点击选择要退的课程，然后点击Quit即可选课成功
+~~~
+    	// input and Exception model
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));   
+        String str = null;
+        while(true){
+            try {
+                System.out.println("Please type the word or words you want to count: " );
+                str = br.readLine();
+            }catch(IOException e){
+                e.printStackTrace();
+                System.out.println("IO's type error!");
+            }
+            //System.out.print(str+"\n");
+            break;
+        }
+        
+	//count model
+	public static int count(String srcStr, String findStr) {
+		int count = 0;
+		int index = 0;
+		while ((index = srcStr.indexOf(findStr, index)) != -1) {// if key exists in str
+			index = index + findStr.length();
+			count++; // +1
+		}
+		return count;
+	}
+~~~
+##### 2-分支3 进入Print mode
+##### 系统自动展示所有已经选择课程，点击OK或者右上角的叉都可退出Print mode以及选课系统
 ~~~
     	// input and Exception model
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));   
@@ -92,10 +155,9 @@ public static void main(String[] args)
 
 ---
 ### 实验感想
-#### 本次实验主要是针对字符串的实验，通过本次实验我掌握了字符串的部分操作，能够灵活的运用切片对字符串进行分割，以及对于字符串的子串的索引查询有了进一步的了解。相信通过本次实验，对于今后的数据处理操作会有很大的益处。本次实验较为简单，在理清基本思路之后便能大概构思出实现对应功能所需要的方法和函数。
+#### 本次实验主要是针对GUI以及IO的实验，通过本次实验我掌握了GUI的设定（运用WindowsBuilder插件可大大提高设置效率），能够灵活的运用IO操作进行文件读取和输出操作，以及字符串的匹配，索引查询有了进一步的了解。除此之外，对于异常的处理也更加的熟练了。相信通过本次实验，对于今后的数据处理操作会有很大的益处。本次实验较为复杂，但是在理清基本思路之后便能大概构思出实现对应功能所需要的方法和函数。
 #### 个人认为无论是什么编程语言，最基本的还是逻辑，然后才是各种语言的语法和方法。只要逻辑清晰，思路正确，代码的大体便成了型。再通过不断地调试，不断地改进，最终总会达到想要的效果。实际上每一次实验，每一次课程设计都是锻炼思维逻辑以及强化知识储备的过程。
 ---
 ### Author
 #### Kukdo 
-##### Ps. First time creating my own repository
-#### Update Time: 2019-11-16 4:00 PM
+#### Update Time: 2019-12-6 4:00 PM
