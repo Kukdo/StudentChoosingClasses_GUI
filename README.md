@@ -29,7 +29,7 @@
 #### Build id: 20190614-1200
 ---
 ### 操作步骤及核心代码：
-#### 0. Login mode 
+### 0. Login mode 
 #### 执行Login程序，如果是学生则选中Student，若是老师则选中Teacher，学生如果已经Create账号直接Login即可，未注册的学生需要先进行Create；老师通过管理员给的账号密码登陆，不可自己创建具有管理权限的账号；
 ##### 核心代码（登陆部分）如下：
 ~~~ 
@@ -44,7 +44,8 @@
 ~~~
 ##### Login mode 示例图：
 ![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Login.PNG)
-#### 分支1 老师登陆
+---
+### 分支1 老师登陆
 ##### Admin 登陆成功示例图：
 ###### 注：默认设定管理员的账号和密码都2018310781
 ![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Admin_Login.PNG)
@@ -54,7 +55,7 @@
 ![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Admin_loginfail.PNG)
 ##### Admin 创建失败示例图：
 ![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Admin_create_fail.PNG)
-#### 1-1 进入Create mode，在对应的文本框填入对应信息之后点击Create Lessons即可创建成功，之后退出系统
+### 1-1 进入Create mode，在对应的文本框填入对应信息之后点击Create Lessons即可创建成功，之后退出系统
 ##### 注：一次只能创建一门课，如果还需再创建请重新登陆系统的管理员账号
 #### 核心代码（建立标签和文本框，获取输入信息部分）如下：
 ~~~
@@ -93,7 +94,8 @@
 ![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Create.PNG)
 ##### 创建课程成功进行选课操作 示例图：
 ![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Chose_after_create.PNG)
-#### 分支2 学生登陆
+---
+### 分支2 学生登陆
 ##### Student创建成功 示例图：
 ![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Student_create_account.PNG)
 ##### Student 登陆成功 示例图：
@@ -102,7 +104,7 @@
 ![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Student_null_login.PNG)
 ##### Student 登陆失败 示例图：
 ![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Student_loginfail.PNG)
-#### 2-0 进入Index mode，可选择三个mode，Chose，Exit以及Print；
+### 2-0 进入Index mode，可选择三个mode，Chose，Exit以及Print；
 ##### Index mode 示例图：
 ![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Index.PNG)
 #### 核心代码（引入各个模块部分）如下：
@@ -138,7 +140,8 @@
 			}
 ~~~
 ##### 注：若无选择课程，则无法打印课程以及退课，因此应该优先进行选课操作
-##### 2-分支1 进入Chose mode
+---
+### 2-分支1 进入Chose mode
 ##### 通过鼠标点击选择课程，然后点击Select即可选课成功
 #### 核心代码（获取用户选定的课程信息部分）如下：
 ~~~
@@ -166,7 +169,8 @@
 ![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Chose.PNG)
 ##### 选课成功示例图：
 ![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Chose_Successfully.PNG)
-##### 2-分支2 进入Exit mode
+---
+### 2-分支2 进入Exit mode
 ##### 通过鼠标点击选择要退的课程，然后点击Quit即可选课成功
 #### 核心代码（获取用户选定的退课对象部分）如下：
 ~~~
@@ -188,7 +192,8 @@
 ![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Exit_Chosen.PNG)
 ##### 退课成功示例图：
 ![image](https://github.com/Kukdo/StudentChoosingClasses_GUI/blob/master/src/pics/Exit_Successfully.PNG)
-##### 2-分支3 进入Print mode
+---
+### 2-分支3 进入Print mode
 ##### 系统自动展示(打印)所有已经选择课程，点击OK或者右上角的叉都可退出Print mode以及选课系统
 #### 核心代码（输出信息部分）如下：
 ~~~
